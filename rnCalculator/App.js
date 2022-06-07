@@ -11,8 +11,13 @@ export default function App() {
   
   const handlePress = (value) => {
     if (value === "=") {
-      setResult(eval(items.join('')));
+      setResult(eval(items.join('').replace(/(\+|-|\/|x)+$/,"")));
       setItems([]);
+      return
+    }
+    if (value === 'AC') {
+      setItems([])
+      setResult(0)
       return
     }
     const itemsCopy = [...items, value]
@@ -22,7 +27,7 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Header />
+      <Header  />
       <Display result={result}/>
       <Keyboard handlePress={handlePress} />
       <StatusBar style="auto" />
@@ -33,8 +38,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: 'black',
+    color: 'white',
+    padding:25
+  }
 });
