@@ -1,45 +1,43 @@
-# JavaScript React Native - Calculator
+# Japanese Calculator
+A calculator using Japanese Hiragana built with React Native. 
 
-## A. Scenario
+## Built with 
 
-It's not uncommon for companies to try out new channels to reach their customers with, even though that might differ from your normal approach.
+### - client-side -
+- 
+  
+## Deployments
+[server](https://)
 
-Imagine that you are working at a web shop and then one day the marketing (always the marketing) head honcho walks through the door of the developers den. This is trouble, you know it will be trouble:
+## Installation
 
-> Folks! My daughter showed me SnapChat yesterday - why don't we have an app? We only have the website. Build an app, will ya? Just to show that we can - make a calculator or something.
+```bash
+# in the server folder
+npm i
+npm run start # node
+#or
+npm run dev # nodemon for development purposes
 
-Here we go - now all of a sudden we need to become phone developers... How are we gonna hack ourselves out of this one?
+#in the client folder
+npm i
+npm run start
+```
 
-## B. What you will be working on today
+## ENV ?
 
-Today you are going to build a calculator app in React Native using Expo. The app should support the basics calcation methods (addition, subtraction, multiplication and division) and work just like the built-in calculation:
+## What I have learned from this project
+Initially, this project is a simple exercise made to learn React Native with other team members (using mob programming). I then decided to explore React Native a bit deeper to continue learning and try out new things:
+- using neumorphic style for the UI.
+- convert arabic numbers to hiraganas
+## What's next to do?
+to-do
 
-1. Enter first number
-2. Enter calculation method
-3. Enter second number
-4. Present the result
+## Team
 
-## C. Testing and linting setup
+[![Marina Kinalone Simonnet](https://avatars.githubusercontent.com/u/63544936?v=3&s=144)](https://github.com/marinakinalone) |
+---|
+[Marina Kinalone Simonnet](https://github.com/marinakinalone) |
 
-The main focus of this exercise is to get the tooling for React Native up and running, things like:
+## [License](https://github.com/marinakinalone/********/blob/main/LICENSE.txt)
 
-* The Expo CLI
-* The developement server
-* The simulators for IPhone and Android
-* and the entire development flow
-
-Therefor we will not focus on the linting and testing aspects in this exercise.
-
-## D. Lab instructions
-
-* Design the application as one single screen
-* Think about splitting components for the different parts of the UI
-* Test the application in your simulators
-
-Once you have finished the application you can:
-
-* Deploy the application to Expo so that you can test it out on your own phone.
-
----
-
-Good luck and have fun!
+MIT © [Marina Kinalone Simonnet](https://github.com/marinakinalone)
