@@ -6,24 +6,23 @@ import Display from './components/Display'
 import { useState } from 'react';
 
 export default function App() {
-  const [items, setItems] = useState([]);
+  const [expression, setExpression] = useState([]);
   const [result, setResult] = useState(0);
   
-  const handlePress = (value) => {
-    if (value === "=") {
-      setResult(eval(items.join('').replace(/(\+|-|\/|x)+$/,"")));
-      setItems([]);
+  const handlePress = (input) => {
+    if (input === "=") {
+      setResult(eval(expression.join('').replace(/(\+|-|\/|\*)+$/,"")));
+      setExpression([]);
       return
     }
-    if (value === 'AC') {
-      setItems([])
+    if (input === 'AC') {
+      setExpression([])
       setResult(0)
       return
     }
-    const itemsCopy = [...items, value]
-    setItems(itemsCopy);
-    setResult(itemsCopy.join(''));
-    console.log(value);
+    const currentInput = [...expression, input]
+    setExpression(currentInput);
+    setResult(currentInput.join(''));
   }
   return (
     <View style={styles.container}>

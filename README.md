@@ -12,7 +12,7 @@ A calculator using Japanese Hiragana built with React Native.
 
 ```bash
 npm i
-npm run expo 
+npm run start
 
 ```
 
@@ -27,6 +27,6 @@ to-do
 ---|
 [Marina Kinalone Simonnet](https://github.com/marinakinalone) |
 
-## [License](https://github.com/marinakinalone/********/blob/main/LICENSE.txt)
+## [License](https://github.com/marinakinalone/react-native-calculator/blob/master/LICENSE)
 
 MIT © [Marina Kinalone Simonnet](https://github.com/marinakinalone)
