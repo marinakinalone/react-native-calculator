@@ -4,28 +4,27 @@ import React from 'react'
 
 const Keyboard = ({handlePress}) => {
   const btnValues = [
-    "AC","del", "%", "÷","7","8","9","*","4","5","6","-","1","2","3","+","romaji", "0",",","="];
-
-
+    "AC","del", "%", "÷","七","八","九","*","四","五","六","-","一","二","三","+","d/l", "零","点","="];
   return (
     <View style={styles.keyboard}>
       {btnValues.map((value,index) => {
         return (
-          <>
           <TouchableOpacity key={index} onPress={() => {handlePress(value)}}>
             <View style={styles.btnWrapper}>
               <Text style={styles.btn} >{value}</Text>
             </View>
           </TouchableOpacity>
-          </>
         )
       })}
     </View>
   )
 }
+
+
 const styles = StyleSheet.create({
   keyboard: {
    flexDirection: "row",
+   justifyContent: 'center',
     alignItems: "center",
     flexWrap: 'wrap',
 
@@ -33,15 +32,15 @@ const styles = StyleSheet.create({
   btnWrapper: {
     alignItems: "center",
     justifyContent: 'center',
-    margin: 10
+    margin: 7
 
   },
   btn: {
     width: 60,
     height: 60,
-    backgroundColor: 'grey',
-    color: 'white',
-    borderRadius: 90,
+    boxShadow: "5px 5px 7px #b2c6cf, -5px -5px 7px #ecffff",
+    color: 'purple',
+    borderRadius: 20,
     textAlign: "center",
     lineHeight: 60,
     fontSize:20,
@@ -49,3 +48,8 @@ const styles = StyleSheet.create({
   }
 });
 export default Keyboard
+
+//TODO
+// press
+// background: linear-gradient(145deg, #bacfd9, #ddf6ff);
+// box-shadow:  7px 7px 13px #b2c6cf, -7px -7px 13px #ecffff;

@@ -1,29 +1,32 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 
 const Display = ({result}) => {
   return (
     <View style={styles.display}>
-        <Text style={styles.content}>{result}</Text>
+          <Text style={styles.display__result}>{result}</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
     display: {
-       backgroundColor: 'white',
-        marginTop: 80,
-        fontSize: "60px",
-        fontWeight: "bold"
+        marginTop: 70,
+        marginLeft: 5,
+        marginRight: 5,
+        marginBottom: 10,
+        borderRadius: 20,
+        boxShadow: "inset 7px 7px 13px #b2c6cf, inset -7px -7px 13px #ecffff"
     },
-    content: {
-        fontSize: 60,
-        fontWeight: "bold",
-        backgroundColor: "black",
-        color: "white",
+    display__result: {
+        margin: 20,
+        fontSize: 50,
+        color: "purple",
         textAlign:"right",
-        paddingRight:20
+        paddingRight:20,
+        borderRadius: 20,
+        boxShadow: "7px 7px 13px #b2c6cf, 7px -7px 13px #ecffff"
 
     }
   });
