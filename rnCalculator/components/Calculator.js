@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from './Header'
 import { StyleSheet, View } from 'react-native';
 import Keyboard from './Keyboard'
 import Display from './Display'
@@ -60,7 +59,6 @@ const Calculator = () => {
     }
     return (
         <View style={theme === 'light' ? (styles.container__light):(styles.container__dark)}>
-            {/* <Header  /> */}
             <Display result={result} theme={theme} />
             {theme === 'light' ? (
               <Keyboard handlePress={handlePress} keyboardTheme={btnValuesLight} theme={theme} />
