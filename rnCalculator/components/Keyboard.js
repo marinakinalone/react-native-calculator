@@ -1,13 +1,11 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react'
 
+const Keyboard = ({handlePress, keyboardTheme}) => {
 
-const Keyboard = ({handlePress}) => {
-  const btnValues = [
-    "AC","del", "%", "÷","七","八","九","*","四","五","六","-","一","二","三","+","d/l", "零","点","="];
   return (
     <View style={styles.keyboard}>
-      {btnValues.map((value,index) => {
+      {keyboardTheme.map((value,index) => {
         return (
           <TouchableOpacity key={index} onPress={() => {handlePress(value)}}>
             <View style={styles.btnWrapper}>
