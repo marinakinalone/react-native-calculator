@@ -4,11 +4,8 @@ import Keyboard from './Keyboard'
 import Display from './Display'
 import { useState } from 'react'
 import { kanjis } from '../helpers/kanji';
+import { btnValuesDark, btnValuesLight } from '../helpers/keyboards';
 
-const btnValuesLight = [
-  "AC","del", "%", "÷","七","八","九","*","四","五","六","-","一","二","三","+","🌙", "零","点","="];
-const btnValuesDark = [
-    "AC","del", "%", "÷","七","八","九","*","四","五","六","-","一","二","三","+","☀️", "零","点","="];
 
 const Calculator = () => {
     const [expression, setExpression] = useState([]);
@@ -23,6 +20,11 @@ const Calculator = () => {
     }
 
     const changeTheme = () => theme === 'light' ? setTheme('dark'): setTheme('light')
+
+    const resetStates = () => {
+      setResult(0)
+      setExpression([]);
+    }
     
     const handlePress = (input) => {
       const value = getLatinValue(input);
@@ -31,17 +33,13 @@ const Calculator = () => {
         return
       }
       if (value === "=") {
-        if (expression == false) {
-          setResult(0)
+        const result = eval(expression.join('').replace(/(\+|-|÷|\*)+$/,""))
+        if (result == false || result === undefined) {
+          resetStates()
           return
         } 
-        setResult(eval(expression.join('').replace(/(\+|-|\/|\*)+$/,"")));
+        setResult(result);
         setExpression([]);
-        return
-      }
-      if (value === 'AC') {
-        setExpression([])
-        setResult(0)
         return
       }
       let currentInput = [...expression, value]
@@ -49,9 +47,8 @@ const Calculator = () => {
         currentInput.pop()
         currentInput.pop()
       }
-      if (currentInput == false) {
-        setExpression([])
-        setResult(0)
+      if (currentInput == false || value === 'AC') {
+        resetStates()
         return
       };
       setExpression(currentInput);
