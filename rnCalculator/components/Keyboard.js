@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react'
 
-const Keyboard = ({handlePress, keyboardTheme}) => {
+const Keyboard = ({handlePress, keyboardTheme, theme}) => {
 
   return (
     <View style={styles.keyboard}>
@@ -9,7 +9,7 @@ const Keyboard = ({handlePress, keyboardTheme}) => {
         return (
           <TouchableOpacity key={index} onPress={() => {handlePress(value)}}>
             <View style={styles.btnWrapper}>
-              <Text style={styles.btn} >{value}</Text>
+              <Text style={theme === 'light' ? (styles.btn__light):(styles.btn__dark)} >{value}</Text>
             </View>
           </TouchableOpacity>
         )
@@ -33,11 +33,22 @@ const styles = StyleSheet.create({
     margin: 7
 
   },
-  btn: {
+  btn__light: {
     width: 60,
     height: 60,
     boxShadow: "5px 5px 7px #b2c6cf, -5px -5px 7px #ecffff",
-    color: 'purple',
+    color: '#936bb4',
+    borderRadius: 20,
+    textAlign: "center",
+    lineHeight: 60,
+    fontSize:20,
+    fontWeight:"bold"
+  },
+  btn__dark: {
+    width: 60,
+    height: 60,
+    boxShadow: "5px 5px 7px #7d5b99, -5px -5px 7px #a97bcf",
+    color: '#cfe6f1',
     borderRadius: 20,
     textAlign: "center",
     lineHeight: 60,

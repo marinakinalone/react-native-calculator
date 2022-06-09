@@ -59,20 +59,20 @@ const Calculator = () => {
       setResult(currentInput.join(''));
     }
     return (
-        <View style={theme === 'light' ? (styles.container):(styles.container__dark)}>
+        <View style={theme === 'light' ? (styles.container__light):(styles.container__dark)}>
             {/* <Header  /> */}
-            <Display result={result}/>
+            <Display result={result} theme={theme} />
             {theme === 'light' ? (
-              <Keyboard handlePress={handlePress} keyboardTheme={btnValuesLight} />
+              <Keyboard handlePress={handlePress} keyboardTheme={btnValuesLight} theme={theme} />
             ):(
-              <Keyboard handlePress={handlePress} keyboardTheme={btnValuesDark} />
+              <Keyboard handlePress={handlePress} keyboardTheme={btnValuesDark} theme={theme} />
             )}
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container__light: {
     flex: 1,
     backgroundColor: '#cfe6f1',
     padding:5,
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   container__dark: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: '#936bb4',
     padding:5,
     minHeight: "100vh"
   },
