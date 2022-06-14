@@ -3,7 +3,7 @@ A calculator using Japanese Hiragana built with React Native.
 
 ## Built with 
 
-- 
+- React Native
   
 ## Deployments
 [coming...](https://)
@@ -17,6 +17,7 @@ npm run start
 ```
 
 ## What I have learned from this project
+to-do
 
 ## What's next to do?
 to-do
