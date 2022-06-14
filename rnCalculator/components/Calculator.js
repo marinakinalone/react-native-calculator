@@ -28,10 +28,12 @@ const Calculator = () => {
     
     const handlePress = (input) => {
       const value = getLatinValue(input);
+      // handles change of theme
       if (input === "🌙" || input === "☀️") {
         changeTheme();
         return
       }
+      // press "=" displays result and clean expression
       if (value === "=") {
         const result = eval(expression.join('').replace(/(\+|-|÷|\*)+$/,""))
         if (result == false || result === undefined) {
@@ -43,10 +45,17 @@ const Calculator = () => {
         return
       }
       let currentInput = [...expression, value]
+      // press "del" deletes the last value added
       if (value === 'del') {
         currentInput.pop()
         currentInput.pop()
       }
+      // press two operators buttons in a row removes the first operator added
+      if (/(\+|-|÷|\*)/.test(value) === true && /(\+|-|÷|\*)/.test(expression[expression.length-1])) {
+        const newExpression = expression.slice(0, -1)
+        currentInput = [...newExpression, value]
+      }
+      // press "AC" reset to 0, default state if expression empty 
       if (currentInput == false || value === 'AC') {
         resetStates()
         return
