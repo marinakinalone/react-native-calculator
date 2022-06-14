@@ -1,30 +1,62 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 
-const Display = ({result}) => {
+const Display = ({result, theme}) => {
   return (
-    <View style={styles.display}>
-        <Text style={styles.content}>{result}</Text>
+    <View style={theme === 'light' ? (styles.display__light):(styles.display__dark)}>
+          <View style={theme === 'light' ? (styles.display__result_light):(styles.display__result_dark)}>
+            <Text style={theme === 'light' ? (styles.result__light):(styles.result__dark)}>{result}</Text>
+          </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-    display: {
-       backgroundColor: 'white',
-        marginTop: 80,
-        fontSize: "60px",
-        fontWeight: "bold"
+    display__light: {
+        marginTop: 70,
+        marginLeft: 5,
+        marginRight: 5,
+        marginBottom: 10,
+        borderRadius: 20,
+        boxShadow: "inset 7px 7px 13px #b2c6cf, inset -7px -7px 13px #ecffff",
     },
-    content: {
-        fontSize: 60,
-        fontWeight: "bold",
-        backgroundColor: "black",
-        color: "white",
-        textAlign:"right",
-        paddingRight:20
-
-    }
+    display__dark: {
+      marginTop: 70,
+      marginLeft: 5,
+      marginRight: 5,
+      marginBottom: 10,
+      borderRadius: 20,
+      boxShadow: "inset 7px 7px 13px #7d5b99, inset -7px -7px 13px #a97bcf"
+    },
+    display__result_light: {
+        margin: 20,
+        display: "flex",
+        alignItems: "flex-end",
+        paddingRight:20,
+        borderRadius: 20,
+        boxShadow: "7px 7px 13px #b2c6cf, 7px -7px 13px #ecffff",
+        overflow: "hidden",
+        whiteSpace: "nowrap"
+    },
+    display__result_dark: {
+      margin: 20,
+      display: "flex",
+      alignItems: "flex-end",
+      textAlign:"right",
+      paddingRight:20,
+      borderRadius: 20,
+      boxShadow: "7px 7px 13px #7d5b99, 7px -7px 13px #a97bcf",
+      overflow: "hidden",
+      whiteSpace: "nowrap"
+  },
+  result__light: {
+    fontSize: 50,
+    color: "#936bb4",
+  },
+  result__dark: {
+    fontSize: 50,
+    color: "#cfe6f1",
+  },
   });
 export default Display;
