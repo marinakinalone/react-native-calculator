@@ -45,6 +45,10 @@ const Calculator = () => {
         return
       }
       let currentInput = [...expression, value]
+      // press operator as first input
+      if (/(\+|-|÷|\*)/.test(value) === true && expression.length === 0) {
+        currentInput = [0, value]
+      }
       // press "del" deletes the last value added
       if (value === 'del') {
         currentInput.pop()
