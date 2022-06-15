@@ -65,12 +65,14 @@ const Calculator = () => {
     }
     return (
         <View style={theme === 'light' ? (styles.container__light):(styles.container__dark)}>
+            <View style={theme === 'light' ? (styles.webcontainer__light):(styles.webcontainer__dark)}>
             <Display result={result} theme={theme} />
             {theme === 'light' ? (
               <Keyboard handlePress={handlePress} keyboardTheme={btnValuesLight} theme={theme} />
             ):(
               <Keyboard handlePress={handlePress} keyboardTheme={btnValuesDark} theme={theme} />
             )}
+            </View>
         </View>
     )
 }
@@ -87,6 +89,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#936bb4',
     padding:5,
     minHeight: "100vh"
+  },
+  webcontainer__light: {
+    maxWidth: 350,
+    margin: "auto",
+    padding: 25,
+    borderRadius: 50,
+    boxShadow: "35px 35px 70px #b0c4cd, -35px -35px 70px #eeffff",
+  },
+  webcontainer__dark: {
+    maxWidth: 350,
+    margin: "auto",
+    padding: 25,
+    borderRadius: 50,
+    boxShadow: "35px 35px 70px #7d5b99, -35px -35px 70px #a97bcf",
   },
 
 });
