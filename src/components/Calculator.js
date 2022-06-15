@@ -1,10 +1,10 @@
-import React from 'react'
 import { StyleSheet, View } from 'react-native';
 import Keyboard from './Keyboard'
 import Display from './Display'
 import { useState } from 'react'
 import { kanjis } from '../helpers/kanji';
 import { btnValuesDark, btnValuesLight } from '../helpers/keyboards';
+import React from "react";
 
 
 const Calculator = () => {
@@ -36,7 +36,6 @@ const Calculator = () => {
       // press "=" displays result and clean expression
       if (value === "=") {
         const result = eval(expression.join('').replace(/÷/, "/").replace(/(\+|-|\/|\*)+$/,""))
-        console.log(result)
         if (result == false || result === undefined) {
           resetStates()
           return
