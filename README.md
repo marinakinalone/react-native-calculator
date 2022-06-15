@@ -39,7 +39,7 @@ I've never heard of React Native Web before and therefore, it was a good opportu
 ## What's next to do?
 - Display the result in Japanese kanjis
 - Implement the "percentage" function
-- Check that the styling is consistent from one platform to another (ie. BorderRadius is not working on iOS)
+- Check that the styling is consistent from one platform to another (ie. BorderRadius is not working on iOS). It seems like the view shrinks on mobile...
 ## Resources
 - [Build and Deploy a React Native Web App on Netlify from Scratch](https://codinhood.com/build-deploy-react-native-web-on-netlify)
 - [neumorphism.io](https://neumorphism.io/#e0e0e0)
