@@ -7,10 +7,9 @@ import { btnValuesDark, btnValuesLight } from '../helpers/keyboards';
 import React from "react";
 
 
-const Calculator = () => {
+const Calculator = ({theme, changeTheme}) => {
     const [expression, setExpression] = useState([]);
     const [result, setResult] = useState(0);
-    const [theme, setTheme] = useState('light')
 
     const getLatinValue = (input) => {
       const index = kanjis.findIndex(k => k[input]);
@@ -18,9 +17,6 @@ const Calculator = () => {
       if (index !== -1) value = kanjis[index][input];
       return value
     }
-
-    const changeTheme = () => theme === 'light' ? setTheme('dark'): setTheme('light')
-
     const resetStates = () => {
       setResult(0)
       setExpression([]);
@@ -68,7 +64,6 @@ const Calculator = () => {
       setResult(currentInput.join(''));
     }
     return (
-        <View style={theme === 'light' ? (styles.container__light):(styles.container__dark)}>
             <View style={theme === 'light' ? (styles.webcontainer__light):(styles.webcontainer__dark)}>
             <Display result={result} theme={theme} />
             {theme === 'light' ? (
@@ -77,32 +72,19 @@ const Calculator = () => {
               <Keyboard handlePress={handlePress} keyboardTheme={btnValuesDark} theme={theme} />
             )}
             </View>
-        </View>
     )
 }
 
 const styles = StyleSheet.create({
-  container__light: {
-    flex: 1,
-    backgroundColor: '#cfe6f1',
-    padding:5,
-    minHeight: "100vh"
-  },
-  container__dark: {
-    flex: 1,
-    backgroundColor: '#936bb4',
-    padding:5,
-    minHeight: "100vh"
-  },
   webcontainer__light: {
-    maxWidth: 350,
+    width: 350,
     margin: "auto",
     padding: 25,
     borderRadius: 50,
     boxShadow: "35px 35px 70px #b0c4cd, -35px -35px 70px #eeffff",
   },
   webcontainer__dark: {
-    maxWidth: 350,
+    width: 350,
     margin: "auto",
     padding: 25,
     borderRadius: 50,
