@@ -36,7 +36,6 @@ const Calculator = () => {
       // press "=" displays result and clean expression
       if (value === "=") {
         const result = eval(expression.join('').replace(/÷/, "/").replace(/(\+|-|\/|\*)+$/,""))
-        console.log(result)
         if (result == false || result === undefined) {
           resetStates()
           return
